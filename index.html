@@ -1,34 +1,32 @@
-```html
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Student Registration Form</title>
 
     <style>
-        body{
-            font-family: Arial, sans-serif;
-            background-image: url("https://images.unsplash.com/photo-1562774053-701939374585");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-        }
+ body {
+    background-image: url("https://images.unsplash.com/photo-1580582932707-520aed937b7b");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    margin: 0;
+}
 
         .container{
             width: 400px;
             padding: 30px;
             border-radius: 20px;
 
-            /* Transparent Form */
-            background: rgba(255,255,255,0.1);
 
-            /* Glass Effect */
-            backdrop-filter: blur(8px);
-
+        
             border: 1px solid rgba(255,255,255,0.4);
             box-shadow: 0 8px 32px rgba(0,0,0,0.3);
         }
@@ -46,6 +44,7 @@
         input[type="text"],
         input[type="email"],
         input[type="tel"],
+        
         select{
             width: 100%;
             padding: 10px;
@@ -84,30 +83,43 @@
     <form>
 
         <label>First Name:</label><br>
-        <input type="text" name="fname"><br><br>
+        <input type="text" ><br><br>
 
         <label>Last Name:</label><br>
-        <input type="text" name="lname"><br><br>
+        <input type="text" ><br><br>
 
         <label>Email:</label><br>
-        <input type="email" name="email"><br><br>
+        <input type="email" ><br><br>
 
-        <label>Phone Number:</label><br>
-        <input type="tel" name="phone"><br><br>
+        <label>Phone Number:</label><br><br>
+        <input 
+    type="tel"
+   
+  
+    oninput="
+      this.value=this.value.replace(/[^0-9]/g,'');
+      if(this.value.length > 10){
+      this.value=this.value.substring(0,10);
+      }
+    "
+    required
+  >
 
-        <label>Gender:</label><br>
-        <span class="gender">
+
+        <label>Gender:</label><br><br>
+      
             <input type="radio" name="gender"> Male
             <input type="radio" name="gender"> Female
-        </span>
+       
         <br><br>
 
-        <label>Course:</label><br>
+        <label style="color:blue;" > Course:</label><br>
         <select>
             <option>Software Development</option>
             <option>Networking</option>
             <option>Multimedia</option>
             <option>Accounting</option>
+            <option>MEG sterm two</option>
         </select>
 
         <br><br>
@@ -120,4 +132,4 @@
 
 </body>
 </html>
-```
+
